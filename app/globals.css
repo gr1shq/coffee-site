@@ -1,1 +1,103 @@
+/* app/globals.css */
 @import "tailwindcss";
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes steam {
+  0% { transform: translateY(0); opacity: 0.8; }
+  100% { transform: translateY(-20px); opacity: 0; }
+}
+
+@keyframes pulseCta {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-steam {
+  animation: steam 2s ease-out infinite;
+}
+
+.animate-pulse-cta {
+  animation: pulseCta 2s ease-in-out infinite;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.parallax-image {
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  cursor: pointer; 
+}
+
+.parallax-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.parallax-image:hover img {
+  transform: scale(1.05) !important;
+}
+
+.dancing-script {
+  font-family: var(--font-dancing-script);
+}
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+/* Update globals.css */
+.gallery-image {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.lightbox-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Changed to contain for modal to show full image */
+}
+
+.lightbox-button:focus {
+  outline: 2px solid #10b981; /* Tailwind's green-500 */
+  outline-offset: 2px;
+}
