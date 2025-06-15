@@ -6,7 +6,7 @@ import { FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
 interface Image {
   src: string;
   alt: string;
-  caption: string; // Added for caption reveal
+  caption: string; 
 }
 
 const images: Image[] = [
@@ -31,7 +31,7 @@ export default function Gallery() {
       const sectionTop = section.getBoundingClientRect().top + scrollY;
       const bg = section.querySelector('.gallery-bg');
       if (bg) {
-        const offset = (scrollY - sectionTop) * 0.15; // Subtle parallax
+        const offset = (scrollY - sectionTop) * 0.15; 
         (bg as HTMLElement).style.transform = `translateY(${offset}px)`;
       }
     };
@@ -73,7 +73,6 @@ export default function Gallery() {
     }
   };
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedImage === null) return;
@@ -86,7 +85,6 @@ export default function Gallery() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [selectedImage]);
 
-  // Click outside modal to close
   const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === modalRef.current) closeModal();
   };
@@ -130,7 +128,6 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* Lightbox Modal */}
       {selectedImage !== null && (
         <div
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"

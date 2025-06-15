@@ -1,8 +1,6 @@
-// app/(components)/Header.tsx
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Header() {
@@ -24,11 +22,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-20 bg-white shadow-md">
       <nav className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="flex items-center">
           <span className="text-xl font-inter font-bold text-gray-900">Neon Brew</span>
         </Link>
-        {/* Desktop Nav */}
         <div className="hidden md:flex gap-6">
           {navLinks.map((link) => (
             <Link
@@ -40,7 +36,6 @@ export default function Header() {
             </Link>
           ))}
         </div>
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-700 focus:outline-none"
           onClick={toggleMobileMenu}
@@ -55,7 +50,6 @@ export default function Header() {
             />
           </svg>
         </button>
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="absolute top-16 left-0 w-full bg-white shadow-md md:hidden">
             <div className="flex flex-col gap-4 p-4">

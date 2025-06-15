@@ -1,4 +1,3 @@
-// app/components/SteamParticle.tsx
 const steamParticles = Array.from({ length: 10 }, (_, i) => ({
     width: `${4 + (i % 2)}px`,
     height: `${4 + (i % 2)}px`,

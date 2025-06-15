@@ -1,4 +1,3 @@
-// app/components/ParticleBackground.tsx
 const particles = Array.from({ length: 15 }, (_, i) => ({
     width: `${2 + (i % 3)}px`,
     height: `${2 + (i % 3)}px`,

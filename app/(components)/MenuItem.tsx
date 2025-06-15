@@ -1,4 +1,3 @@
-// app/(components)/MenuItem.tsx
 import Image from 'next/image';
 
 interface MenuItemProps {

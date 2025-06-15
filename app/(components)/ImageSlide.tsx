@@ -1,4 +1,3 @@
-// app/(components)/ImageSlide.tsx
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -13,7 +12,6 @@ interface ImageSlideProps {
 export default function ImageSlide({ src, alt, index }: ImageSlideProps) {
   const slideRef = useRef<HTMLDivElement>(null);
 
-  // Subtle parallax scale effect
   useEffect(() => {
     const slide = slideRef.current;
     if (!slide) return;
@@ -40,7 +38,6 @@ export default function ImageSlide({ src, alt, index }: ImageSlideProps) {
         className="object-cover hover:scale-105 transition-transform duration-300"
         sizes="(max-width: 768px) 100vw, 80vw"
         loading={index === 0 ? 'eager' : 'lazy'}
-        onError={() => console.error(`Failed to load ${src}`)} // Debug log
       />
     </div>
   );

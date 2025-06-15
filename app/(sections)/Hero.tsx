@@ -1,4 +1,3 @@
-// app/(sections)/Hero.tsx
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -17,7 +16,6 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [scrollY, setScrollY] = useState(0);
 
-  // Parallax effect
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -26,9 +24,8 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Animation trigger
   useEffect(() => {
-    console.log('Hero Section Mounted'); // Debug log
+    console.log('Hero Section Mounted'); 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -48,16 +45,14 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative h-[60vh] flex items-center px-4 bg-brown-600 overflow-hidden" ref={sectionRef}>
-      {/* Parallax Background */}
       <Image
         src="/images/coffee-shop-bg.jpg"
         alt="Neon Brew coffee shop"
         fill
         className="object-cover z-0"
         style={{ transform: `translateY(${scrollY * 0.2}px)` }}
-        onError={() => console.error('Failed to load coffee-shop-bg.jpg')} // Debug log
+        onError={() => console.error('Failed to load coffee-shop-bg.jpg')} 
       />
-      {/* Animated Coffee Beans */}
       <Image
         src="/images/coffee-bean.png"
         alt="Coffee bean"
@@ -75,7 +70,6 @@ export default function Hero() {
         data-animate
         style={{ animationDelay: '1s' }}
       />
-      {/* Steam Wisp */}
       <Image
         src="/images/steam.png"
         alt="Steam wisp"

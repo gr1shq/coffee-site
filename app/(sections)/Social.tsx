@@ -5,7 +5,6 @@ import { FaInstagram } from 'react-icons/fa';
 export default function Social() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  // IntersectionObserver for animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -24,7 +23,6 @@ export default function Social() {
     return () => observer.disconnect();
   }, []);
 
-  // Mock Instagram posts (replace with API data in production)
   const posts = [
     { id: 1, src: '/images/post1.jpg', alt: 'Coffee post 1', caption: 'Morning latte vibes ☕' },
     { id: 2, src: '/images/post2.png', alt: 'Coffee post 2', caption: 'Cozy corner at Neon Brew' },
@@ -39,7 +37,6 @@ export default function Social() {
       role="region"
       aria-label="Social media showcase"
     >
-      {/* Background Parallax */}
       <div
         className="absolute inset-0 bg-[url('/images/coffee-beans-bg.jpg')] bg-cover bg-center opacity-10 will-change-transform"
         style={{ transform: 'translateY(0)' }}

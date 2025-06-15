@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { FaInstagram, FaTwitter } from 'react-icons/fa'; // Add react-icons
+import { FaInstagram, FaTwitter } from 'react-icons/fa'; 
 
 export default function Footer() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -14,7 +14,7 @@ export default function Footer() {
           entry.target.querySelectorAll('[data-animate]').forEach((el, index) => {
             setTimeout(() => {
               el.classList.add('is-visible');
-            }, index * 100); // Faster animation
+            }, index * 100); 
           });
         }
       },
@@ -27,9 +27,8 @@ export default function Footer() {
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate newsletter signup (replace with actual API call)
     setSubscribed(true);
-    setTimeout(() => setSubscribed(false), 3000); // Reset after 3s
+    setTimeout(() => setSubscribed(false), 3000); 
     setEmail('');
   };
 
